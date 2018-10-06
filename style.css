@@ -28,13 +28,8 @@ section {
 #overlay {
   position: fixed;
   z-index: 2;
-  
-}
-
-#wrapper div {
-  background-color: rgba(240, 10, 200, 0.7);
 }
 
 #overlay div {
-  background-color: rgba(10, 200, 180, 0.6);
+  opacity: 0.6
 }

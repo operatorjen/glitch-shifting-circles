@@ -10,67 +10,54 @@ let a = 1.0
 let switchR = false
 let switchG = false
 let switchB = false
+let switchA = false
 
 for (let i = 0; i < 300; i++) {
   const div = document.createElement('div')
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   wrapper.appendChild(div)
   
-  if (r < 1) {
-    switchR = true
-  }
-  
-  if (g < 1) {
-    switchG = true
-  }
-  
-  if (b < 1) {
-    switchB = true
-  }
-  
   switchR ? r += 5 : r -= 5
+  switchG ? g += 2 : g -= 2
+  switchB ? b += 1 : b -= 1
   
-  if (r < 230) {
-    switchG ? g += 2 : g -= 2
-    switchB ? b += 1 : b -= 1
-  }
+  r > 254 ? switchR = false : null
+  g > 254 ? switchG = false : null
+  b > 254 ? switchB = false : null  
   
-  a -= 0.01
+  r < 0 ? switchR = true : null
+  g < 0 ? switchG = true : null
+  b < 0 ? switchB = true : null
   
-  if (a < 0.1) {
-    a = 1.0
-  }
+  a > 1.0 ? switchA = false : null  
+  a < 0.01 ? switchA = true : null
+  
+  switchA ? a += 0.01 : a -= 0.01
 }
 
-r = 215
+r = 220
 g = 20
-b = 250
+b = 150
+a = 0.8
 
 for (let i = 0; i < 110; i++) {
   const div = document.createElement('div')
-  div.style.opacity = opacity
-  overlay.appendChild(div)
-  
-  r -= 2
-  g -= 1
-  b -= 15
-  
-  if (r < 10) {
-    r = 225
-  }
-  
-  if (g < 10) {  
-    g = 100
-  }
-  
-  if (b < 1) {
-    b = 150
-  }
 
+  switchR ? r += 1 : r -= 1
+  switchG ? g += 10 : g -= 10
+  switchB ? b += 3 : b -= 3
   
+  r > 254 ? switchR = false : null
+  g > 104 ? switchG = false : null
+  b > 154 ? switchB = false : null  
+  
+  r < 230 ? switchR = true : null
+  g < 10 ? switchG = true : null
+  b < 110 ? switchB = true : null
+  
+  a < 0.01 ? switchA = true : null  
+  switchA ? a += 0.01 : a -= 0.01
+
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
-  opacity -= 0.5
-  if (opacity < 0.05) {
-    opacity = 0.8
-  }
+  overlay.appendChild(div)
 }
