@@ -45,7 +45,7 @@ for (let i = 0; i < 1110; i++) {
 
   switchR ? r += 12 : r -= 2
   switchG ? g += 6 : g -= 16
-  switchB ? b += 13 : b -= 13
+  switchB ? b += 3 : b -= 3
   
   r > 14 ? switchR = false : null
   g > 14 ? switchG = false : null
@@ -56,8 +56,21 @@ for (let i = 0; i < 1110; i++) {
   b < 110 ? switchB = true : null
   
   a < 0.01 ? switchA = true : null  
-  switchA ? a += 0.01 : a -= 0.08
+  switchA ? a += 0.08 : a -= 0.08
 
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   overlay.appendChild(div)
 }
+
+let switchScroll = false
+let counter = 0
+
+function pageScroll() {
+  switchScroll ? window.scroll(0, 1) : window.scroll(0, -1)
+  let scrolldelay = setTimeout(pageScroll, 1)
+  
+  co
+  switchScroll = !switchScroll
+}
+
+pageScroll()
