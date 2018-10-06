@@ -1,5 +1,14 @@
-/* If you're feeling fancy you can add interactivity 
-    to your site with Javascript */
+const wrapper = document.querySelector('#wrapper')
+const overlay = document.querySelector('#overlay')
 
-// prints "hi" in the browser's dev tools console
-console.log('hi');
+for (let i = 0; i < 80; i++) {
+  const div = document.createElement('div')
+  div.classList.add(`s${i}`)
+  wrapper.appendChild(div)
+}
+
+for (let i = 0; i < 100; i++) {
+  const div = document.createElement('div')
+  div.
+  overlay.appendChild(div)
+}
