@@ -12,7 +12,7 @@ let switchG = false
 let switchB = false
 let switchA = false
 
-for (let i = 0; i < 1520; i++) {
+for (let i = 0; i < 1580; i++) {
   const div = document.createElement('div')
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   wrapper.appendChild(div)
@@ -40,7 +40,7 @@ g = 20
 b = 150
 a = 0.7
 
-for (let i = 0; i < 1110; i++) {
+for (let i = 0; i < 2110; i++) {
   const div = document.createElement('div')
 
   switchR ? r += 12 : r -= 2
@@ -56,7 +56,8 @@ for (let i = 0; i < 1110; i++) {
   b < 110 ? switchB = true : null
   
   a < 0.01 ? switchA = true : null  
-  switchA ? a += 0.08 : a -= 0.08
+  a > 1.0 ? switchA = false : null
+  switchA ? a += 0.1 : a -= 0.1
 
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   overlay.appendChild(div)
@@ -66,11 +67,11 @@ let switchScroll = false
 let counter = 0
 
 function pageScroll() {
-  switchScroll ? window.scroll(0, 1) : window.scroll(0, -1)
-  let scrolldelay = setTimeout(pageScroll, 1)
+  switchScroll ? window.scrollBy(0, -1510) : window.scrollBy(0, 1510)
+  let scrolldelay = setTimeout(pageScroll, 0)
   
-  co
-  switchScroll = !switchScroll
+  counter++
+  counter % 2 === 0 ? switchScroll = !switchScroll : null
 }
 
 pageScroll()
