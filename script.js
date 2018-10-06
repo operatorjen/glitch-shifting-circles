@@ -12,7 +12,7 @@ let switchG = false
 let switchB = false
 let switchA = false
 
-for (let i = 0; i < 300; i++) {
+for (let i = 0; i < 520; i++) {
   const div = document.createElement('div')
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   wrapper.appendChild(div)
@@ -21,7 +21,7 @@ for (let i = 0; i < 300; i++) {
   switchG ? g += 2 : g -= 2
   switchB ? b += 1 : b -= 1
   
-  r > 254 ? switchR = false : null
+  r > 154 ? switchR = false : null
   g > 254 ? switchG = false : null
   b > 254 ? switchB = false : null  
   
@@ -32,13 +32,13 @@ for (let i = 0; i < 300; i++) {
   a > 1.0 ? switchA = false : null  
   a < 0.01 ? switchA = true : null
   
-  switchA ? a += 0.01 : a -= 0.01
+  switchA ? a += 0.02 : a -= 0.02
 }
 
-r = 220
+r = 120
 g = 20
 b = 150
-a = 0.8
+a = 0.7
 
 for (let i = 0; i < 110; i++) {
   const div = document.createElement('div')
@@ -48,7 +48,7 @@ for (let i = 0; i < 110; i++) {
   switchB ? b += 3 : b -= 3
   
   r > 254 ? switchR = false : null
-  g > 104 ? switchG = false : null
+  g > 114 ? switchG = false : null
   b > 154 ? switchB = false : null  
   
   r < 230 ? switchR = true : null
