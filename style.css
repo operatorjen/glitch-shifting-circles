@@ -2,28 +2,30 @@
 
 body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 0l
+  margin: 0;
 }
 
 div {
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 10px;
   margin: 1px;
+}
+
+section {
+  top: 0;
+  left: 0;
+  width: 90vw;
 }
 
 #wrapper {
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1;
 }
 
 #overlay {
   position: fixed;
   z-index: 2;
-  top: 0;
-  left: 0;
 }
 
 #wrapper div {
