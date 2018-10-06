@@ -3,7 +3,7 @@
 body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 0;
-  background: linear-gradient(-15deg, rgb(200, 10, 10), rgb(10, 220, 180));
+  background: linear-gradient(-15deg, rgb(200, 10, 10), rgb(100, 230, 230));
   background-attachment: fixed;
 }
 
@@ -22,13 +22,13 @@ section {
 }
 
 #wrapper {
-  position: absolute;
-  z-index: 1;
+  margin-left: -45px;
 }
 
 #overlay {
   position: fixed;
   z-index: 2;
+  
 }
 
 #wrapper div {

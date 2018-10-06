@@ -7,28 +7,32 @@ let g = 255
 let b = 255
 let a = 1.0
 
-for (let i = 0; i < 500; i++) {
+let switchR = false
+let switchG = false
+let switchB = false
+
+for (let i = 0; i < 300; i++) {
   const div = document.createElement('div')
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   wrapper.appendChild(div)
   
   if (r < 1) {
-    r = 155 
+    switchR = true
   }
   
   if (g < 1) {
-    g = 255 
+    switchG = true
   }
   
   if (b < 1) {
-    b = 155
+    switchB = true
   }
   
-  r -= 5
+  switchR ? r += 5 : r -= 5
   
   if (r < 230) {
-    g -= 2
-    b -= 1
+    switchG ? g += 2 : g -= 2
+    switchB ? b += 1 : b -= 1
   }
   
   a -= 0.01
@@ -42,20 +46,20 @@ r = 215
 g = 20
 b = 250
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 110; i++) {
   const div = document.createElement('div')
   div.style.opacity = opacity
   overlay.appendChild(div)
   
-  r -= 1
-  g -= 3
-  b -= 5
+  r -= 2
+  g -= 1
+  b -= 15
   
-  if (r < 1) {
-    r = 155
+  if (r < 10) {
+    r = 225
   }
   
-  if (g < 1) {  
+  if (g < 10) {  
     g = 100
   }
   
@@ -65,7 +69,7 @@ for (let i = 0; i < 100; i++) {
 
   
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
-  opacity -= 0.05
+  opacity -= 0.5
   if (opacity < 0.05) {
     opacity = 0.8
   }
