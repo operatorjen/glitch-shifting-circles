@@ -9,8 +9,8 @@ body {
 
 div {
   float: left;
-  width: 5%;
-  height: 5%;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
 }
 
@@ -22,7 +22,7 @@ section {
 }
 
 #wrapper {
-  margin-left: -45px;
+  margin-left: -25px;
 }
 
 #overlay {
@@ -31,5 +31,5 @@ section {
 }
 
 #overlay div {
-  opacity: 0.6
+  opacity: 0.7
 }

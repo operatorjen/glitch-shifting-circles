@@ -12,7 +12,7 @@ let switchG = false
 let switchB = false
 let switchA = false
 
-for (let i = 0; i < 520; i++) {
+for (let i = 0; i < 1520; i++) {
   const div = document.createElement('div')
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   wrapper.appendChild(div)
@@ -40,23 +40,23 @@ g = 20
 b = 150
 a = 0.7
 
-for (let i = 0; i < 110; i++) {
+for (let i = 0; i < 1110; i++) {
   const div = document.createElement('div')
 
-  switchR ? r += 1 : r -= 1
-  switchG ? g += 10 : g -= 10
-  switchB ? b += 3 : b -= 3
+  switchR ? r += 12 : r -= 2
+  switchG ? g += 6 : g -= 16
+  switchB ? b += 13 : b -= 13
   
-  r > 254 ? switchR = false : null
-  g > 114 ? switchG = false : null
-  b > 154 ? switchB = false : null  
+  r > 14 ? switchR = false : null
+  g > 14 ? switchG = false : null
+  b > 224 ? switchB = false : null  
   
-  r < 230 ? switchR = true : null
-  g < 10 ? switchG = true : null
+  r < 240 ? switchR = true : null
+  g < 40 ? switchG = true : null
   b < 110 ? switchB = true : null
   
   a < 0.01 ? switchA = true : null  
-  switchA ? a += 0.01 : a -= 0.01
+  switchA ? a += 0.01 : a -= 0.08
 
   div.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`
   overlay.appendChild(div)
